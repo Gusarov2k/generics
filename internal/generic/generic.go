@@ -1,8 +1,7 @@
 package generic
 
 import (
-	"log"
-	"reflect"
+	"fmt"
 	"strconv"
 )
 
@@ -28,26 +27,12 @@ func GenerateString32(numbers ...int32) string {
 
 func GenerateStringInter(any ...interface{}) string {
 
-	fn := reflect.ValueOf(any)
-	fnType := fn.Type()
+	var number string
+	for _, val := range any {
+		str := fmt.Sprintf("%v", val)
+		number += str + ", "
 
-	log.Println(fnType)
-	//var number string
-	//if fnType == int {
-	//	for _, val := range any {
-	//		number += strconv.Itoa(int(val)) + ", "
-	//	}
-	//	fullLen := len(number)
-	//
-	//	return number[:fullLen - 2]
-	//
-	//}
-	//log.Println(any.)
-	//var number string
-	//for _, val := range any {
-	//	number += strconv.Itoa(int(val)) + ", "
-	//}
-	//fullLen := len(number)
-	//return number[:fullLen - 2]
-	return "ze"
+	}
+	fullLen := len(number)
+	return number[:fullLen - 2]
 }

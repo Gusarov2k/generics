@@ -16,7 +16,12 @@ func TestGenerateStringInt32(t *testing.T) {
 	assert.EqualValues(t, "1, 2, 3, 4, 5", generic.GenerateString32(1,2,3,4,5) )
 }
 
-func TestGenerateStringIntInter(t *testing.T) {
+func TestGenerateStringInterfaceInt(t *testing.T) {
 
 	assert.EqualValues(t, "1, 2, 3, 4, 5", generic.GenerateStringInter(1,2,3,4,5) )
+}
+
+func TestGenerateStringIntInterfaceInt32(t *testing.T) {
+	var num int32 = 112
+	assert.EqualValues(t, "112", generic.GenerateStringInter(num) )
 }
