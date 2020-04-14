@@ -26,12 +26,10 @@ func GenerateString32(numbers ...int32) string {
 }
 
 func GenerateStringInter(any ...interface{}) string {
-
 	var number string
 	for _, val := range any {
 		str := fmt.Sprintf("%v", val)
 		number += str + ", "
-
 	}
 	fullLen := len(number)
 	return number[:fullLen - 2]
